@@ -1,0 +1,22 @@
+<dx-data-grid
+id="gridContainer"
+keyExpr="ID"
+[dataSource]="dataSource"
+[showBorders]="true"
+>
+    <dxo-filter-row
+    [visible]="true"
+></dxo-filter-row>
+
+    <dxi-column dataField="FirstName"></dxi-column>
+
+    <dxi-column dataField="CityID" caption="City">
+        <dxo-lookup
+          [dataSource]="cities"
+          valueExpr="ID"
+          displayExpr="Name"
+        >
+        </dxo-lookup>
+      </dxi-column>
+
+</dx-data-grid>
